@@ -24,6 +24,17 @@ public class ServicioMensualidadSoapBindingStub extends org.apache.axis.client.S
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("obtenerListMorososMensualidad");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://serviciomensualidad", "mes"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        oper.setReturnClass(java.lang.String.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://serviciomensualidad", "obtenerListMorososMensualidadReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[0] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("regPagoMensualidad");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://serviciomensualidad", "rutEs"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
@@ -34,17 +45,6 @@ public class ServicioMensualidadSoapBindingStub extends org.apache.axis.client.S
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         oper.setReturnClass(java.lang.String.class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://serviciomensualidad", "regPagoMensualidadReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[0] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("obtenerListMorososMensualidad");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://serviciomensualidad", "mes"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        oper.setReturnClass(java.lang.String.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://serviciomensualidad", "obtenerListMorososMensualidadReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[1] = oper;
@@ -102,7 +102,7 @@ public class ServicioMensualidadSoapBindingStub extends org.apache.axis.client.S
         }
     }
 
-    public java.lang.String regPagoMensualidad(java.lang.String rutEs, java.lang.String rutSc, int mes) throws java.rmi.RemoteException {
+    public java.lang.String obtenerListMorososMensualidad(int mes) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -114,11 +114,11 @@ public class ServicioMensualidadSoapBindingStub extends org.apache.axis.client.S
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://serviciomensualidad", "regPagoMensualidad"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://serviciomensualidad", "obtenerListMorososMensualidad"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {rutEs, rutSc, new java.lang.Integer(mes)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(mes)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -136,7 +136,7 @@ public class ServicioMensualidadSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public java.lang.String obtenerListMorososMensualidad(int mes) throws java.rmi.RemoteException {
+    public java.lang.String regPagoMensualidad(java.lang.String rutEs, java.lang.String rutSc, int mes) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -148,11 +148,11 @@ public class ServicioMensualidadSoapBindingStub extends org.apache.axis.client.S
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://serviciomensualidad", "obtenerListMorososMensualidad"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://serviciomensualidad", "regPagoMensualidad"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(mes)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {rutEs, rutSc, new java.lang.Integer(mes)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;

@@ -152,7 +152,7 @@ public class CrearCurso extends JFrame {
 						String resultado = asignar.asignarProfesor(id, rutProfe, rutJefeAdm);
 						resAsignar.setText(resultado);
 					} else {
-						resAsignar.setText("No se pudo asignar el profesor");
+						resAsignar.setText("Debe llenar todos los campos");
 					}
 				} catch (RemoteException e) {
 					// TODO Auto-generated catch block

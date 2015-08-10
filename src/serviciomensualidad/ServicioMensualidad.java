@@ -8,6 +8,6 @@
 package serviciomensualidad;
 
 public interface ServicioMensualidad extends java.rmi.Remote {
-    public java.lang.String regPagoMensualidad(java.lang.String rutEs, java.lang.String rutSc, int mes) throws java.rmi.RemoteException;
     public java.lang.String obtenerListMorososMensualidad(int mes) throws java.rmi.RemoteException;
+    public java.lang.String regPagoMensualidad(java.lang.String rutEs, java.lang.String rutSc, int mes) throws java.rmi.RemoteException;
 }

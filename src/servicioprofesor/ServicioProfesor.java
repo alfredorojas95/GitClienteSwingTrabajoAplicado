@@ -8,7 +8,7 @@
 package servicioprofesor;
 
 public interface ServicioProfesor extends java.rmi.Remote {
-    public java.lang.String[] buscarProfe(java.lang.String rutProfe) throws java.rmi.RemoteException;
     public java.lang.String registrarAsistencia(java.lang.String rutEst, int idCurso, java.lang.String notaS, java.lang.String rutProf) throws java.rmi.RemoteException;
     public java.lang.String registrarPromedio(java.lang.String rutEst, int idCurso, java.lang.String notaS, java.lang.String rutProf) throws java.rmi.RemoteException;
+    public java.lang.String[] buscarProfe(java.lang.String rutProfe) throws java.rmi.RemoteException;
 }

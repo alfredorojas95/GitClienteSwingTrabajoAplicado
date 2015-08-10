@@ -44,6 +44,18 @@ public class ServicioCursoProxy implements serviciocurso.ServicioCurso {
     return servicioCurso;
   }
   
+  public java.lang.String[] buscarCurso(int id) throws java.rmi.RemoteException{
+    if (servicioCurso == null)
+      _initServicioCursoProxy();
+    return servicioCurso.buscarCurso(id);
+  }
+  
+  public java.lang.String crearCurso(java.lang.String nombreCurso, java.lang.String rutJefeAdm) throws java.rmi.RemoteException{
+    if (servicioCurso == null)
+      _initServicioCursoProxy();
+    return servicioCurso.crearCurso(nombreCurso, rutJefeAdm);
+  }
+  
   public java.lang.String asignarProfesor(int id, java.lang.String rutProfe, java.lang.String rutJefeAdm) throws java.rmi.RemoteException{
     if (servicioCurso == null)
       _initServicioCursoProxy();
@@ -54,18 +66,6 @@ public class ServicioCursoProxy implements serviciocurso.ServicioCurso {
     if (servicioCurso == null)
       _initServicioCursoProxy();
     return servicioCurso.desactivarCurso(id, rutDirector);
-  }
-  
-  public java.lang.String crearCurso(java.lang.String nombreCurso, java.lang.String rutJefeAdm) throws java.rmi.RemoteException{
-    if (servicioCurso == null)
-      _initServicioCursoProxy();
-    return servicioCurso.crearCurso(nombreCurso, rutJefeAdm);
-  }
-  
-  public java.lang.String[] buscarCurso(int id) throws java.rmi.RemoteException{
-    if (servicioCurso == null)
-      _initServicioCursoProxy();
-    return servicioCurso.buscarCurso(id);
   }
   
   public java.lang.String inscribirEstudiantes(int idCurso, java.lang.String rutEstudiante, java.lang.String rutProf) throws java.rmi.RemoteException{

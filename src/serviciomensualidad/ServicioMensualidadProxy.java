@@ -44,16 +44,16 @@ public class ServicioMensualidadProxy implements serviciomensualidad.ServicioMen
     return servicioMensualidad;
   }
   
-  public java.lang.String regPagoMensualidad(java.lang.String rutEs, java.lang.String rutSc, int mes) throws java.rmi.RemoteException{
-    if (servicioMensualidad == null)
-      _initServicioMensualidadProxy();
-    return servicioMensualidad.regPagoMensualidad(rutEs, rutSc, mes);
-  }
-  
   public java.lang.String obtenerListMorososMensualidad(int mes) throws java.rmi.RemoteException{
     if (servicioMensualidad == null)
       _initServicioMensualidadProxy();
     return servicioMensualidad.obtenerListMorososMensualidad(mes);
+  }
+  
+  public java.lang.String regPagoMensualidad(java.lang.String rutEs, java.lang.String rutSc, int mes) throws java.rmi.RemoteException{
+    if (servicioMensualidad == null)
+      _initServicioMensualidadProxy();
+    return servicioMensualidad.regPagoMensualidad(rutEs, rutSc, mes);
   }
   
   
